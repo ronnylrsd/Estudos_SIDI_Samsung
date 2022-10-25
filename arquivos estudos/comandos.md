@@ -68,6 +68,14 @@
 
 - `docker top (Nome do container)`
 
+18 - Mostrar os dados do container em detakhes :
+
+- `docker inspect (Nome do container)`
+
+19 - Exibir os container que esta rodando em detalhes :
+
+- `docker top stats`
+
 # Criar arquivo dockerfile
 
 **Dockerfile**
