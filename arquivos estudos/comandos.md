@@ -22,7 +22,7 @@
 
 6 - Lista as imagens :
 
-- `docker images`
+- `docker image ls`
 
 7 - Remove a imagem :
 
@@ -39,3 +39,58 @@
 10 - Mostra os logs do container (todos registro de interações com esse container) :
 
 - `docker logs (nome_do_container)`
+
+11 - Para fazer o build da imagem criada :
+
+- `docker build (Diretório da imagem)`
+
+12 - Iniciar container com um nome personalizado :
+
+- `docker run --name (nome que voce dara a imgem) (nome da imagem)`
+
+13 - Dar nome a uma imagem :
+
+- `docker tag (id da imagem) (nome para a imagem)`
+
+14 - Para fazer o build da imagem criada dando um nome :
+
+- `docker build -t (nome para a imagem) (Diretório da imagem)`
+
+15 - Remover as imagens e recursos nao utilizados no container :
+
+- `docker system prune`
+
+16 - Copiar arquivos do docker para o pc ou vice versar :
+
+- ``docker cp (arquivo origem/caminho relativo arquivo)`
+
+17 - Mostrar os dados do container :
+
+- `docker top (Nome do container)`
+
+# Criar arquivo dockerfile
+
+**Dockerfile**
+
+```
+# usar a imagem node como base para a imagem que sera criada
+FROM node
+
+# definir o diretorio de trabalho da imagem que sera criada
+WORKDIR /app
+
+# copiar o arquivo package.json para o diretorio de trabalho da imagem que sera criada
+COPY package*.json .
+
+# instalar as dependencias do projeto que estao no arquivo package.json.
+RUN npm install
+
+# copiar todos os arquivos do diretorio atual para o diretorio de trabalho da imagem que sera criada  
+COPY . .
+
+# expor a porta 3000 da imagem que sera criada
+EXPOSE 3000
+
+# comando que sera executado quando a imagem for executada
+CMD [ "node", "app.js" ]
+```
