@@ -46,7 +46,7 @@
 
 12 - Iniciar container com um nome personalizado :
 
-- `docker run --name (nome que voce dara a imgem) (nome da imagem)`
+- `docker run --name (nome que voce dará a imagem) (nome da imagem)`
 
 13 - Dar nome a uma imagem :
 
@@ -68,7 +68,7 @@
 
 - `docker top (Nome do container)`
 
-18 - Mostrar os dados do container em detakhes :
+18 - Mostrar os dados do container em detalhes :
 
 - `docker inspect (Nome do container)`
 
@@ -84,16 +84,16 @@
 # usar a imagem node como base para a imagem que sera criada
 FROM node
 
-# definir o diretorio de trabalho da imagem que sera criada
+# definir o diretório de trabalho da imagem que sera criada
 WORKDIR /app
 
-# copiar o arquivo package.json para o diretorio de trabalho da imagem que sera criada
+# copiar o arquivo package.json para o diretório de trabalho da imagem que sera criada
 COPY package*.json .
 
-# instalar as dependencias do projeto que estao no arquivo package.json.
+# instalar as dependências do projeto que estão no arquivo package.json.
 RUN npm install
 
-# copiar todos os arquivos do diretorio atual para o diretorio de trabalho da imagem que sera criada  
+# copiar todos os arquivos do diretório atual para o diretório de trabalho da imagem que sera criada  
 COPY . .
 
 # expor a porta 3000 da imagem que sera criada
